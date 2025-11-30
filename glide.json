@@ -1,0 +1,43 @@
+[
+	{
+	  "kind": "column",
+	  "name": "Custom AI (OpenAI / Claude / Gemini / NanoBanana)",
+	  "description": "Universal AI Column with secure proxy. Built by @xaviigna",
+	  "author": "xaviigna",
+	  "params": [
+		{
+		  "name": "columnData",
+		  "displayName": "Column → (optional input text)",
+		  "type": "string"
+		},
+		{
+		  "name": "prompt",
+		  "displayName": "Prompt (instruction for the AI)",
+		  "type": "string"
+		},
+		{
+		  "name": "secretKey",
+		  "displayName": "Secret Key (for secure worker validation)",
+		  "type": "string"
+		},
+		{
+		  "name": "model",
+		  "displayName": "Model (OpenAI / Claude / Gemini / NanoBanana)",
+		  "type": "string"
+		},
+		{
+		  "name": "temperature",
+		  "displayName": "Temperature (0.0–2.0)",
+		  "type": "string"
+		},
+		{
+		  "name": "maxTokens",
+		  "displayName": "Max Tokens",
+		  "type": "string"
+		}
+	  ],
+	  "result": {
+		"type": "string"
+	  }
+	}
+  ]
