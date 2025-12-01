@@ -1,8 +1,8 @@
 [
 	{
 	  "kind": "column",
-	  "name": "Custom AI (OpenAI / Claude / Gemini / NanoBanana)",
-	  "description": "Universal AI Column with secure proxy. Built by @xaviigna",
+	  "name": "Custom AI",
+	  "description": "AI Column with secure proxy. Built by @xaviigna",
 	  "author": "xaviigna",
 	  "params": [
 		{
