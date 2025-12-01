@@ -41,8 +41,13 @@ async function sha256(message) {
   
     const raw = JSON.stringify(payload);
     const signature = await sha256(raw + secretKey);
-  
+
     try {
+      // Ensure body is a string (not undefined/null)
+      if (!raw || typeof raw !== 'string') {
+        return "Error: Failed to serialize payload";
+      }
+
       const response = await fetch(
         "https://cloudflare-proxy.xavierbenavidesm.workers.dev",
         {
@@ -51,7 +56,7 @@ async function sha256(message) {
             "Content-Type": "application/json",
             "X-Signature": signature
           },
-          body: raw
+          body: raw  // String body should work, but ensure it's not empty
         }
       );
   
