@@ -61,16 +61,33 @@ async function sha256(message) {
       );
   
       if (!response.ok) {
-        return `Error: ${await response.text()}`;
+        const errorText = await response.text();
+        return `Error: ${errorText}`;
       }
   
       const data = await response.json();
   
-      return (
-        data?.choices?.[0]?.message?.content ||
-        data?.choices?.[0]?.text ||
-        "No response"
-      );
+      // Debug: Check what we actually received
+      if (!data) {
+        return "Error: Empty response from server";
+      }
+      
+      // Check for OpenAI error structure
+      if (data.error) {
+        return `Error: ${data.error.message || JSON.stringify(data.error)}`;
+      }
+      
+      // Try to extract the content
+      const content = data?.choices?.[0]?.message?.content || 
+                      data?.choices?.[0]?.text ||
+                      data?.content;
+      
+      if (content) {
+        return content;
+      }
+      
+      // If we get here, log what we received for debugging
+      return `Error: Unexpected response format. Received: ${JSON.stringify(data).substring(0, 200)}`;
   
     } catch (err) {
       return `Error: ${err.message}`;
