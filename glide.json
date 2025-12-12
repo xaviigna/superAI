@@ -1,10 +1,16 @@
 [
 	{
 	  "kind": "column",
-	  "name": "Custom AI",
-	  "description": "AI Column with secure proxy. Built by @xaviigna",
+	  "name": "Super AI Column (Text & Image)",
+	  "description": "Multifunctional AI Column by @xaviigna",
 	  "author": "xaviigna",
 	  "params": [
+		{
+		  "name": "providerInput",
+		  "displayName": "Provider (openai | google-image)",
+		  "description": "Select the AI service to call: 'openai' for text, 'google-image' for Nano Banana/Gemini image generation.",
+		  "type": "string"
+		},
 		{
 		  "name": "columnData",
 		  "displayName": "Column → (optional input text)",
@@ -12,7 +18,7 @@
 		},
 		{
 		  "name": "prompt",
-		  "displayName": "Prompt (instruction for the AI)",
+		  "displayName": "Prompt (Instruction / Image Description)",
 		  "type": "string"
 		},
 		{
@@ -22,17 +28,26 @@
 		},
 		{
 		  "name": "model",
-		  "displayName": "Model (gpt-4o-mini, gpt-4o, etc)",
+		  "displayName": "Text Model (e.g., gpt-4o-mini)",
+		  "description": "Used only when Provider is 'openai' or 'google' (text).",
+		  "type": "string"
+		},
+		{
+		  "name": "aspectRatio",
+		  "displayName": "Aspect Ratio (e.g., 1:1, 16:9)",
+		  "description": "Used only when Provider is 'google-image'.",
 		  "type": "string"
 		},
 		{
 		  "name": "temperature",
 		  "displayName": "Temperature (0.0–2.0)",
+		  "description": "Used only when Provider is a text model.",
 		  "type": "string"
 		},
 		{
 		  "name": "maxTokens",
 		  "displayName": "Max Tokens",
+		  "description": "Used only when Provider is a text model.",
 		  "type": "string"
 		}
 	  ],
@@ -40,4 +55,4 @@
 		"type": "string"
 	  }
 	}
-  ]
+]
