@@ -6,12 +6,6 @@
 	  "author": "xaviigna",
 	  "params": [
 		{
-		  "name": "providerInput",
-		  "displayName": "Provider (openai | google-image)",
-		  "description": "Select the AI service to call: 'openai' for text, 'google-image' for Nano Banana/Gemini image generation.",
-		  "type": "string"
-		},
-		{
 		  "name": "columnData",
 		  "displayName": "Column → (optional input text)",
 		  "type": "string"
@@ -27,15 +21,15 @@
 		  "type": "string"
 		},
 		{
-		  "name": "model",
-		  "displayName": "Text Model (e.g., gpt-4o-mini)",
-		  "description": "Used only when Provider is 'openai' or 'google' (text).",
+		  "name": "providerInput",
+		  "displayName": "Provider (openai | google-image)",
+		  "description": "Select the AI service to call: 'openai' for text, 'google-image' for Nano Banana/Gemini image generation.",
 		  "type": "string"
 		},
 		{
-		  "name": "aspectRatio",
-		  "displayName": "Aspect Ratio (e.g., 1:1, 16:9)",
-		  "description": "Used only when Provider is 'google-image'.",
+		  "name": "model",
+		  "displayName": "Text Model (e.g., gpt-4o-mini)",
+		  "description": "Used only when Provider is 'openai' or 'google' (text).",
 		  "type": "string"
 		},
 		{
@@ -48,6 +42,12 @@
 		  "name": "maxTokens",
 		  "displayName": "Max Tokens",
 		  "description": "Used only when Provider is a text model.",
+		  "type": "string"
+		},
+		{
+		  "name": "aspectRatio",
+		  "displayName": "Aspect Ratio (e.g., 1:1, 16:9)",
+		  "description": "Used only when Provider is 'google-image'.",
 		  "type": "string"
 		}
 	  ],
